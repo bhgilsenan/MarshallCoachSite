@@ -26,7 +26,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed w-full bg-background/80 backdrop-blur-md z-50 border-b border-border/40">
+    <nav className="fixed w-full bg-background/95 backdrop-blur-sm z-50 border-b border-border">
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
@@ -40,12 +40,12 @@ const Navbar = () => {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+                className="text-sm font-medium uppercase tracking-widest text-foreground/70 hover:text-primary transition-colors"
               >
                 {link.name}
               </a>
             ))}
-            <Button className="rounded-full font-semibold" size="lg">
+            <Button className="rounded-none font-bold uppercase tracking-widest" size="lg">
               Book Alignment Call
             </Button>
           </div>
@@ -78,13 +78,13 @@ const Navbar = () => {
                   key={link.name}
                   href={link.href}
                   onClick={() => setIsOpen(false)}
-                  className="block px-3 py-2 text-base font-medium text-foreground hover:bg-secondary rounded-md"
+                  className="block px-3 py-2 text-lg font-heading font-bold uppercase text-foreground hover:bg-secondary rounded-none"
                 >
                   {link.name}
                 </a>
               ))}
               <div className="pt-4">
-                <Button className="w-full rounded-full" size="lg">
+                <Button className="w-full rounded-none font-bold uppercase" size="lg">
                   Book Alignment Call
                 </Button>
               </div>
@@ -107,17 +107,24 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-[1.1] mb-6">
-              Coaching for Professionals Ready to <span className="text-primary">Move Forward</span>
+            <div className="mb-6 inline-block relative">
+               <span className="font-hand text-2xl md:text-3xl text-accent rotate-[-4deg] block">
+                 Sincerity. Authenticity. Guidance.
+               </span>
+            </div>
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-foreground leading-[0.9] mb-8 uppercase tracking-tighter">
+              COACHING FOR <br/>
+              PROFESSIONALS <br/>
+              READY TO <span className="text-primary block">MOVE FORWARD.</span>
             </h1>
-            <p className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed max-w-xl">
+            <p className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed max-w-xl font-medium">
               I'm Robert Marshall — a former VP who spent three decades helping teams grow, navigate change, and find clarity. Now I help individuals do the same.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="xl" className="text-lg px-8 rounded-full shadow-lg shadow-primary/20">
-                Book Your Free Alignment Call
+              <Button size="xl" className="text-lg px-8 rounded-none font-bold uppercase tracking-widest shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] transition-all border-2 border-black">
+                Book Alignment Call
               </Button>
-              <Button variant="outline" size="xl" className="text-lg px-8 rounded-full bg-background/50">
+              <Button variant="outline" size="xl" className="text-lg px-8 rounded-none border-2 border-black font-bold uppercase tracking-widest hover:bg-secondary transition-colors">
                 Contact via Email
               </Button>
             </div>
@@ -129,15 +136,17 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="relative"
           >
-            <div className="relative z-10 rounded-3xl overflow-hidden shadow-2xl bg-secondary/20">
+            {/* Geometric shapes inspired by the logo colors */}
+            <div className="absolute top-10 right-10 w-full h-full border-4 border-primary -z-10"></div>
+            <div className="absolute -top-4 -left-4 w-32 h-32 bg-secondary -z-20"></div>
+            
+            <div className="relative z-10 border-4 border-black bg-white p-2">
               <img 
                 src={robertPhoto} 
                 alt="Robert Marshall" 
-                className="w-full h-auto object-cover aspect-[4/5] md:aspect-square lg:aspect-[4/5]"
+                className="w-full h-auto object-cover aspect-[4/5] md:aspect-square lg:aspect-[4/5] grayscale hover:grayscale-0 transition-all duration-700"
               />
             </div>
-            {/* Decorative background element */}
-            <div className="absolute -top-10 -right-10 w-full h-full bg-primary/5 rounded-3xl -z-10 transform rotate-6"></div>
           </motion.div>
         </div>
       </div>
@@ -150,12 +159,12 @@ const CredibilityStrip = () => {
   const companies = ["AKQA", "Razorfish", "R/GA", "Fox", "The New York Times"];
   
   return (
-    <section className="py-10 bg-muted/50 border-y border-border/50">
+    <section className="py-12 bg-black text-white border-y border-black">
       <div className="container mx-auto px-4 md:px-6">
-        <p className="text-center text-sm font-medium text-muted-foreground mb-6 uppercase tracking-wider">Experience leading teams at</p>
-        <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-70 grayscale hover:grayscale-0 transition-all duration-500">
+        <p className="text-center text-xs font-bold text-white/60 mb-8 uppercase tracking-[0.2em]">Experience leading teams at</p>
+        <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-8">
           {companies.map((company) => (
-            <span key={company} className="text-xl md:text-2xl font-bold font-heading text-foreground/40 hover:text-foreground/80 transition-colors cursor-default">
+            <span key={company} className="text-2xl md:text-3xl font-bold font-heading uppercase tracking-tighter text-white/80 hover:text-primary transition-colors cursor-default">
               {company}
             </span>
           ))}
@@ -183,12 +192,12 @@ const WhoIHelp = () => {
   ];
 
   return (
-    <section className="py-20 md:py-32">
+    <section className="py-20 md:py-32 bg-secondary/30">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Who I Help</h2>
-          <p className="text-lg text-muted-foreground">
-            My coaching is designed for people who are ready to do the work but need a partner to help them see the way.
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 uppercase">Who I Help</h2>
+          <p className="text-lg font-hand text-primary rotate-[-1deg]">
+            For people ready to do the work.
           </p>
         </div>
 
@@ -200,21 +209,23 @@ const WhoIHelp = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="bg-card p-8 rounded-2xl border border-border shadow-sm hover:shadow-md transition-shadow"
+              className="bg-white p-8 border-2 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,0.1)] hover:shadow-[8px_8px_0px_0px_var(--color-primary)] transition-all"
             >
-              <div className="w-12 h-1 bg-primary mb-6 rounded-full"></div>
-              <h3 className="text-xl font-bold mb-4 font-heading">{profile.title}</h3>
-              <p className="text-muted-foreground leading-relaxed">
+              <div className="w-12 h-12 bg-primary mb-6 flex items-center justify-center text-white font-bold text-xl">
+                {index + 1}
+              </div>
+              <h3 className="text-2xl font-bold mb-4 font-heading uppercase leading-none">{profile.title}</h3>
+              <p className="text-muted-foreground leading-relaxed font-medium">
                 {profile.description}
               </p>
             </motion.div>
           ))}
         </div>
 
-        <div className="text-center mt-12">
-          <p className="text-lg mb-4 font-medium">Not sure where you fit?</p>
-          <Button variant="link" className="text-primary text-lg p-0 h-auto font-semibold">
-            Let's talk about your unique situation <span aria-hidden="true">→</span>
+        <div className="text-center mt-16">
+          <p className="text-2xl mb-4 font-heading font-bold uppercase">Not sure where you fit?</p>
+          <Button variant="link" className="text-primary text-xl p-0 h-auto font-hand font-bold hover:no-underline rotate-[-2deg] hover:rotate-0 transition-transform">
+            Let's talk about your unique situation <span aria-hidden="true" className="ml-2">→</span>
           </Button>
         </div>
       </div>
@@ -225,44 +236,44 @@ const WhoIHelp = () => {
 // Approach / Differentiators
 const Approach = () => {
   const differentiators = [
-    "A people-first leadership style developed over 30 years across three countries.",
-    "VP-level experience managing teams of 40–60 at Fox and The New York Times.",
-    "Deep listening that picks up what you say, what you mean, and what you’ve stopped asking yourself.",
-    "Clear, actionable goal-setting so you always know your next step.",
-    "ADHD-informed coaching based on lived experience.",
-    "Warm, direct, judgment-free support."
+    "People-first leadership style (30+ years)",
+    "VP-level experience (Fox, NYT)",
+    "Deep listening & pattern recognition",
+    "Clear, actionable goal-setting",
+    "ADHD-informed coaching",
+    "Warm, direct, judgment-free support"
   ];
 
   return (
-    <section id="approach" className="py-20 md:py-32 bg-secondary/30">
+    <section id="approach" className="py-20 md:py-32">
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <div>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">What Makes My Approach Different</h2>
-            <p className="text-lg text-muted-foreground mb-8">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 uppercase leading-none">What Makes My Approach <span className="text-primary">Different</span></h2>
+            <p className="text-xl font-medium text-foreground mb-8 border-l-4 border-primary pl-6">
               High-level leadership experience meets human-centered coaching designed to get you unstuck.
             </p>
-            <div className="space-y-4">
+            <div className="grid gap-4">
               {differentiators.map((item, index) => (
-                <div key={index} className="flex gap-4 items-start">
-                  <div className="mt-1 flex-shrink-0 w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center text-primary">
-                    <Check className="w-4 h-4" />
+                <div key={index} className="flex gap-4 items-center group">
+                  <div className="flex-shrink-0 w-8 h-8 border-2 border-black flex items-center justify-center text-black group-hover:bg-black group-hover:text-white transition-colors">
+                    <Check className="w-5 h-5" />
                   </div>
-                  <p className="text-foreground/80">{item}</p>
+                  <p className="text-lg font-bold uppercase tracking-wide text-foreground/80">{item}</p>
                 </div>
               ))}
             </div>
           </div>
           <div className="relative">
-            <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/20 rounded-3xl transform rotate-3"></div>
-            <div className="relative bg-card p-8 md:p-12 rounded-3xl shadow-xl border border-border/50">
-              <h3 className="text-2xl font-heading font-bold mb-6 text-primary">My Philosophy</h3>
-              <blockquote className="text-xl md:text-2xl italic text-muted-foreground leading-relaxed mb-6">
-                "I've always been an 80% people, 20% business leader in roles that demanded the opposite."
+            <div className="absolute inset-0 bg-black transform translate-x-4 translate-y-4"></div>
+            <div className="relative bg-white p-8 md:p-12 border-2 border-black h-full flex flex-col justify-center">
+              <h3 className="text-xl font-hand font-bold mb-6 text-accent rotate-[-2deg] origin-left">My Philosophy</h3>
+              <blockquote className="text-3xl md:text-4xl font-heading font-bold uppercase leading-tight mb-8">
+                "I've always been an <span className="text-primary">80% people</span>, <span className="text-primary">20% business</span> leader in roles that demanded the opposite."
               </blockquote>
               <div className="flex items-center gap-4">
-                <div className="h-px flex-1 bg-border"></div>
-                <span className="text-sm font-semibold uppercase tracking-wider text-muted-foreground">Robert Marshall</span>
+                <div className="h-1 w-12 bg-black"></div>
+                <span className="text-sm font-bold uppercase tracking-widest">Robert Marshall</span>
               </div>
             </div>
           </div>
@@ -275,22 +286,25 @@ const Approach = () => {
 // Story
 const Story = () => {
   return (
-    <section id="story" className="py-20 md:py-32">
+    <section id="story" className="py-20 md:py-32 bg-secondary text-secondary-foreground border-y border-black">
       <div className="container mx-auto px-4 md:px-6 max-w-4xl">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">My Story</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 uppercase">My Story</h2>
+          <div className="w-24 h-2 bg-primary mx-auto"></div>
         </div>
-        <div className="prose prose-lg prose-slate mx-auto text-muted-foreground">
-          <p className="mb-6">
+        <div className="prose prose-lg prose-neutral mx-auto text-foreground/80 font-medium">
+          <p className="mb-6 text-xl leading-relaxed">
             I spent three decades building a career in project management and delivery leadership, working at top agencies and later becoming a VP at Fox and The New York Times. 
           </p>
-          <p className="mb-6">
-            At the height of my career, I realized something important: the parts of my work that energized me most weren’t the business—they were the people. I’ve always been an 80% people, 20% business leader in roles that demanded the opposite.
+          <p className="mb-6 text-xl leading-relaxed">
+            At the height of my career, I realized something important: the parts of my work that energized me most weren’t the business—they were the people. 
           </p>
-          <p className="mb-6">
-            At the same time, I was diagnosed with ADHD at 48. It explained so much—and showed me that the systems I’d built to thrive could help others too.
-          </p>
-          <p>
+          <div className="my-12 p-8 border-l-8 border-primary bg-white">
+            <p className="text-2xl font-bold italic text-black m-0">
+              "At 48, I was diagnosed with ADHD. It explained so much—and showed me that the systems I’d built to thrive could help others too."
+            </p>
+          </div>
+          <p className="text-xl leading-relaxed">
             I transitioned into coaching at my peak, trained through the Jay Shetty Certification School, and now dedicate my work to helping people grow, get unstuck, and move toward what they truly want next.
           </p>
         </div>
@@ -302,50 +316,45 @@ const Story = () => {
 // How It Works
 const Process = () => {
   return (
-    <section className="py-20 md:py-32 bg-primary text-primary-foreground">
+    <section className="py-20 md:py-32">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">How Coaching Works</h2>
-          <p className="text-primary-foreground/80 text-lg max-w-2xl mx-auto">
-            A simple, structured process to move you from stuck to action.
+        <div className="text-center mb-20">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 uppercase">How Coaching Works</h2>
+          <p className="text-xl font-hand text-muted-foreground rotate-2">
+            Simple. Structured. Effective.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 relative">
-          {/* Connector Line (Desktop) */}
-          <div className="hidden md:block absolute top-12 left-0 w-full h-0.5 bg-white/20"></div>
-
+        <div className="grid md:grid-cols-3 gap-0 relative">
           {[
             {
-              step: "01",
+              step: "1",
               title: "Alignment Call",
-              desc: "We explore your goals, your challenges, and whether we’re the right fit. (Free, 30–45 min)"
+              desc: "We explore your goals, your challenges, and whether we’re the right fit. (Free)"
             },
             {
-              step: "02",
+              step: "2",
               title: "Set Clear Goals",
               desc: "Together we create a structured, measurable plan tailored to your needs."
             },
             {
-              step: "03",
+              step: "3",
               title: "Bi-Weekly Coaching",
               desc: "Every two weeks, we track progress, uncover new insights, and adjust as needed."
             }
           ].map((item, index) => (
-            <div key={index} className="relative z-10">
-              <div className="w-24 h-24 bg-white text-primary rounded-full flex items-center justify-center text-3xl font-bold mb-6 mx-auto shadow-lg border-4 border-primary/50">
-                {item.step}
+            <div key={index} className={`relative p-8 border-black ${index !== 2 ? 'md:border-r-2 border-b-2 md:border-b-0' : ''} hover:bg-secondary/20 transition-colors group`}>
+              <div className="text-6xl font-heading font-bold text-black/10 mb-4 group-hover:text-primary/20 transition-colors">
+                0{item.step}
               </div>
-              <div className="text-center px-4">
-                <h3 className="text-xl font-bold mb-3 text-white">{item.title}</h3>
-                <p className="text-primary-foreground/80 leading-relaxed">{item.desc}</p>
-              </div>
+              <h3 className="text-2xl font-bold mb-3 font-heading uppercase">{item.title}</h3>
+              <p className="text-lg text-muted-foreground leading-relaxed font-medium">{item.desc}</p>
             </div>
           ))}
         </div>
 
         <div className="text-center mt-16">
-          <Button size="xl" variant="secondary" className="text-primary font-bold rounded-full px-8 shadow-lg">
+          <Button size="xl" className="text-lg px-12 py-6 rounded-none font-bold uppercase tracking-widest shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all border-2 border-black bg-primary text-white hover:bg-primary/90">
             Book Your Free Alignment Call
           </Button>
         </div>
@@ -357,37 +366,45 @@ const Process = () => {
 // Services
 const Services = () => {
   return (
-    <section id="services" className="py-20 md:py-32">
+    <section id="services" className="py-20 md:py-32 bg-black text-white">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Services & Pricing</h2>
-          <p className="text-muted-foreground text-lg">Transparent pricing. No hidden fees.</p>
+        <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+          <div>
+            <h2 className="text-4xl md:text-5xl font-bold mb-2 uppercase">Services & Pricing</h2>
+            <p className="text-white/60 text-lg font-medium uppercase tracking-widest">Transparent pricing. No hidden fees.</p>
+          </div>
+          <div className="hidden md:block h-px flex-1 bg-white/20 mx-12 mb-4"></div>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          <Card className="border-2 border-border hover:border-primary/50 transition-colors">
-            <CardContent className="p-8">
-              <div className="mb-6">
-                <h3 className="text-2xl font-bold font-heading mb-2">Six-Session Package</h3>
-                <span className="inline-block bg-primary/10 text-primary text-xs font-bold px-2 py-1 rounded uppercase tracking-wide">Best Value</span>
+        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <Card className="bg-white text-black rounded-none border-0 relative overflow-hidden group">
+            <div className="absolute top-0 right-0 bg-primary text-white text-xs font-bold px-3 py-1 uppercase tracking-widest">Best Value</div>
+            <CardContent className="p-10">
+              <div className="mb-8">
+                <h3 className="text-3xl font-bold font-heading mb-2 uppercase">Six-Session Package</h3>
+                <div className="w-12 h-1 bg-black mt-4 group-hover:w-24 transition-all duration-500"></div>
               </div>
-              <p className="text-muted-foreground mb-8 h-20">
+              <p className="text-muted-foreground mb-10 text-lg leading-relaxed min-h-[5rem]">
                 Pay for five, get six. Ideal for job seekers or anyone navigating major change. Use within three months.
               </p>
-              <Button className="w-full rounded-full" size="lg">Get Started</Button>
+              <Button className="w-full rounded-none font-bold uppercase tracking-widest border-2 border-black bg-transparent text-black hover:bg-black hover:text-white shadow-none" size="lg">
+                Get Started
+              </Button>
             </CardContent>
           </Card>
 
-          <Card className="border border-border hover:border-primary/50 transition-colors">
-            <CardContent className="p-8">
-              <div className="mb-6">
-                <h3 className="text-2xl font-bold font-heading mb-2">Individual Sessions</h3>
-                <span className="inline-block bg-secondary text-secondary-foreground text-xs font-bold px-2 py-1 rounded uppercase tracking-wide">Flexible</span>
+          <Card className="bg-neutral-900 text-white rounded-none border-2 border-white/20 group">
+            <CardContent className="p-10">
+              <div className="mb-8">
+                <h3 className="text-3xl font-bold font-heading mb-2 uppercase">Individual Sessions</h3>
+                <div className="w-12 h-1 bg-white/30 mt-4 group-hover:w-24 transition-all duration-500"></div>
               </div>
-              <p className="text-muted-foreground mb-8 h-20">
+              <p className="text-white/60 mb-10 text-lg leading-relaxed min-h-[5rem]">
                 Flexible, ongoing support for clarity, leadership development, or personal growth.
               </p>
-              <Button variant="outline" className="w-full rounded-full" size="lg">Book a Session</Button>
+              <Button variant="outline" className="w-full rounded-none font-bold uppercase tracking-widest border-2 border-white bg-transparent text-white hover:bg-white hover:text-black" size="lg">
+                Book a Session
+              </Button>
             </CardContent>
           </Card>
         </div>
@@ -414,19 +431,22 @@ const Testimonials = () => {
   ];
 
   return (
-    <section id="testimonials" className="py-20 md:py-32 bg-secondary/30">
+    <section id="testimonials" className="py-20 md:py-32">
       <div className="container mx-auto px-4 md:px-6">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">What Clients Say</h2>
-        <div className="grid md:grid-cols-3 gap-8">
+        <h2 className="text-4xl md:text-5xl font-bold text-center mb-20 uppercase">What Clients Say</h2>
+        <div className="grid md:grid-cols-3 gap-12">
           {testimonials.map((t, index) => (
-            <div key={index} className="bg-card p-8 rounded-xl shadow-sm border border-border/50 relative">
-              <span className="absolute top-4 left-4 text-6xl text-primary/10 font-serif leading-none">"</span>
-              <p className="text-lg text-foreground/80 italic mb-6 relative z-10 pt-4">
+            <div key={index} className="relative pt-8">
+              <span className="absolute top-0 left-0 text-8xl text-primary/20 font-heading font-bold leading-none -translate-y-4">“</span>
+              <p className="text-xl md:text-2xl text-foreground font-bold font-heading leading-tight mb-6 relative z-10">
                 {t.quote}
               </p>
-              <p className="text-sm font-bold text-muted-foreground uppercase tracking-wider">
-                — {t.author}
-              </p>
+              <div className="flex items-center gap-3">
+                 <div className="h-px w-8 bg-primary"></div>
+                 <p className="text-sm font-bold text-muted-foreground uppercase tracking-widest">
+                  {t.author}
+                </p>
+              </div>
             </div>
           ))}
         </div>
@@ -438,35 +458,35 @@ const Testimonials = () => {
 // Footer
 const Footer = () => {
   return (
-    <footer className="bg-foreground text-background pt-20 pb-10">
+    <footer className="bg-secondary pt-24 pb-12 border-t-2 border-black">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="flex flex-col md:flex-row justify-between items-center mb-16">
-          <div className="text-center md:text-left mb-8 md:mb-0">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to move forward?</h2>
-            <p className="text-background/70 text-lg">
-              Whether you’re stuck, overwhelmed, or simply ready for something new,<br className="hidden md:block" /> the next step is a conversation.
+        <div className="flex flex-col md:flex-row justify-between items-start mb-20">
+          <div className="text-left mb-12 md:mb-0 max-w-xl">
+            <h2 className="text-4xl md:text-6xl font-bold mb-6 uppercase leading-[0.9]">Ready to <br/>move forward?</h2>
+            <p className="text-foreground/70 text-xl font-medium">
+              Whether you’re stuck, overwhelmed, or simply ready for something new, the next step is a conversation.
             </p>
           </div>
-          <div className="flex flex-col gap-4">
-            <Button size="xl" className="rounded-full bg-white text-foreground hover:bg-white/90 px-8">
-              Book Your Free Alignment Call
+          <div className="flex flex-col gap-4 w-full md:w-auto">
+            <Button size="xl" className="rounded-none bg-primary text-white hover:bg-primary/90 px-10 py-8 text-xl font-bold uppercase tracking-widest border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+              Book Alignment Call
             </Button>
-            <a href="mailto:robert@marshallcoach.com" className="text-center text-background/60 hover:text-white transition-colors">
+            <a href="mailto:robert@marshallcoach.com" className="text-center text-foreground/60 hover:text-black font-bold uppercase tracking-widest text-sm transition-colors mt-4">
               Or email me directly
             </a>
           </div>
         </div>
 
-        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <div className="flex items-center gap-4">
-            <img src={logo} alt="Marshall Coach" className="h-8 w-auto brightness-0 invert opacity-80" />
-            <div className="text-sm text-background/60">
+        <div className="border-t-2 border-black/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
+          <div className="flex items-center gap-6">
+            <img src={logo} alt="Marshall Coach" className="h-8 w-auto opacity-80 mix-blend-multiply" />
+            <div className="text-xs font-bold uppercase tracking-widest text-foreground/50">
               <p>© {new Date().getFullYear()} Robert Marshall</p>
               <p>Certified Coach — Jay Shetty Certification School</p>
             </div>
           </div>
           <div className="flex gap-6">
-            <a href="#" className="text-background/60 hover:text-white transition-colors">LinkedIn</a>
+            <a href="#" className="text-foreground/50 hover:text-black font-bold uppercase tracking-widest text-xs transition-colors">LinkedIn</a>
           </div>
         </div>
       </div>
@@ -476,7 +496,7 @@ const Footer = () => {
 
 const Home = () => {
   return (
-    <div className="min-h-screen bg-background text-foreground font-sans selection:bg-primary/20">
+    <div className="min-h-screen bg-background text-foreground font-sans selection:bg-primary selection:text-white">
       <Navbar />
       <main>
         <Hero />

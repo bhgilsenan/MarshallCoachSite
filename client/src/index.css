@@ -45,77 +45,79 @@
   --color-chart-4: hsl(var(--chart-4));
   --color-chart-5: hsl(var(--chart-5));
 
-  --font-sans: 'Inter', sans-serif;
-  --font-heading: 'Libre Baskerville', serif;
+  --font-sans: 'Jost', sans-serif;
+  --font-heading: 'Oswald', sans-serif;
+  --font-hand: 'Architects Daughter', cursive;
 }
 
-/* LIGHT MODE - Warm, Professional, Trustworthy */
+/* LIGHT MODE - Marshall Identity */
 :root {
-  /* Warm off-white background */
-  --background: 40 20% 99%; 
-  /* Deep Charcoal for text */
-  --foreground: 220 20% 20%;
+  /* Clean White Background */
+  --background: 0 0% 100%; 
+  /* Black Text for high contrast/directness */
+  --foreground: 0 0% 0%;
 
-  /* Pure White cards */
-  --card: 0 0% 100%;
-  --card-foreground: 220 20% 20%;
+  /* Card Backgrounds - Slightly off-white/grey to distinguish from pure white bg */
+  --card: 0 0% 98%;
+  --card-foreground: 0 0% 0%;
 
   --popover: 0 0% 100%;
-  --popover-foreground: 220 20% 20%;
+  --popover-foreground: 0 0% 0%;
 
-  /* Robert's Blue - Trustworthy, Corporate but Human */
-  --primary: 215 60% 45%;
+  /* Red from Logo - Action/Energy */
+  --primary: 354 70% 54%; 
   --primary-foreground: 0 0% 100%;
 
-  /* Soft Warm Beige/Grey for secondary elements */
-  --secondary: 40 15% 94%;
-  --secondary-foreground: 220 20% 20%;
+  /* Light Blue from Logo - Calm/Support */
+  --secondary: 190 30% 90%;
+  --secondary-foreground: 0 0% 10%;
 
-  --muted: 220 10% 96%;
-  --muted-foreground: 220 10% 50%;
+  /* Muted greys */
+  --muted: 0 0% 94%;
+  --muted-foreground: 0 0% 40%;
 
-  /* Subtle Accent - Maybe a soft gold/sand for emphasis without shouting */
-  --accent: 35 40% 90%;
-  --accent-foreground: 220 20% 20%;
+  /* Green from Logo - Growth/Renewal */
+  --accent: 140 40% 30%;
+  --accent-foreground: 0 0% 100%;
 
   --destructive: 0 84.2% 60.2%;
   --destructive-foreground: 0 0% 98%;
 
-  --border: 220 13% 91%;
-  --input: 220 13% 91%;
-  --ring: 215 60% 45%;
+  --border: 0 0% 90%;
+  --input: 0 0% 90%;
+  --ring: 354 70% 54%;
 
-  --radius: 0.5rem;
+  --radius: 0rem; /* Squaring off for "Big Noodle" / Constructivist vibe */
 }
 
 .dark {
-  --background: 220 20% 10%;
-  --foreground: 40 20% 99%;
+  --background: 0 0% 10%;
+  --foreground: 0 0% 98%;
   
-  --card: 220 20% 12%;
-  --card-foreground: 40 20% 99%;
+  --card: 0 0% 14%;
+  --card-foreground: 0 0% 98%;
   
-  --popover: 220 20% 12%;
-  --popover-foreground: 40 20% 99%;
+  --popover: 0 0% 14%;
+  --popover-foreground: 0 0% 98%;
   
-  --primary: 215 60% 55%;
+  --primary: 354 70% 54%;
   --primary-foreground: 0 0% 100%;
   
-  --secondary: 220 20% 16%;
-  --secondary-foreground: 40 20% 99%;
+  --secondary: 190 30% 20%;
+  --secondary-foreground: 0 0% 98%;
   
-  --muted: 220 20% 16%;
-  --muted-foreground: 220 10% 70%;
+  --muted: 0 0% 20%;
+  --muted-foreground: 0 0% 70%;
   
-  --accent: 220 20% 16%;
-  --accent-foreground: 40 20% 99%;
+  --accent: 140 40% 30%;
+  --accent-foreground: 0 0% 98%;
   
   --destructive: 0 62.8% 30.6%;
   --destructive-foreground: 0 0% 98%;
   
-  --border: 220 20% 16%;
-  --input: 220 20% 16%;
-  --ring: 215 60% 55%;
+  --border: 0 0% 20%;
+  --input: 0 0% 20%;
+  --ring: 354 70% 54%;
 }
 
 @layer base {
@@ -126,6 +128,6 @@
     @apply font-sans antialiased bg-background text-foreground;
   }
   h1, h2, h3, h4, h5, h6 {
-    @apply font-heading font-bold tracking-tight;
+    @apply font-heading font-bold uppercase tracking-wide;
   }
 }
