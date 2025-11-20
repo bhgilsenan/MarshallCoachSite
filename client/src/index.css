@@ -10,7 +10,6 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
-  --radius-2xl: calc(var(--radius) + 8px);
 
   --color-background: hsl(var(--background));
   --color-foreground: hsl(var(--foreground));
@@ -39,87 +38,84 @@
   --color-border: hsl(var(--border));
   --color-input: hsl(var(--input));
   --color-ring: hsl(var(--ring));
+  
+  --color-chart-1: hsl(var(--chart-1));
+  --color-chart-2: hsl(var(--chart-2));
+  --color-chart-3: hsl(var(--chart-3));
+  --color-chart-4: hsl(var(--chart-4));
+  --color-chart-5: hsl(var(--chart-5));
 
-  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  --font-heading: 'DM Sans', sans-serif; /* More modern, geometric sans for an Apple-like feel */
-  --font-serif: 'Libre Baskerville', serif; /* Keep for the "editorial" touches */
+  --font-sans: 'Inter', sans-serif;
+  --font-heading: 'Libre Baskerville', serif;
 }
 
-/* 
-  Apple/Google Design Philosophy:
-  - High contrast text (but not pure black)
-  - Subtle, warm backgrounds (not clinical white)
-  - Primary color derived from Logo (Deep Maroon/Wine)
-  - Secondary accents from Logo (Forest Green, Muted Red)
-*/
-
+/* LIGHT MODE - Warm, Professional, Trustworthy */
 :root {
-  /* Base: Warm, sophisticated Paper White */
-  --background: 30 10% 98%; 
-  /* Text: Deep Slate/Charcoal, almost black but softer */
-  --foreground: 220 20% 15%;
+  /* Warm off-white background */
+  --background: 40 20% 99%; 
+  /* Deep Charcoal for text */
+  --foreground: 220 20% 20%;
 
-  /* Cards: Pure white with subtle warmth */
+  /* Pure White cards */
   --card: 0 0% 100%;
-  --card-foreground: 220 20% 15%;
+  --card-foreground: 220 20% 20%;
 
   --popover: 0 0% 100%;
-  --popover-foreground: 220 20% 15%;
+  --popover-foreground: 220 20% 20%;
 
-  /* Primary: Deep Maroon/Wine (from Logo) - Sophisticated, Executive */
-  --primary: 345 40% 35%;
+  /* Robert's Blue - Trustworthy, Corporate but Human */
+  --primary: 215 60% 45%;
   --primary-foreground: 0 0% 100%;
 
-  /* Secondary: Forest Green (from Logo) - Growth, Balance */
-  --secondary: 150 20% 96%; /* Very light wash of green for backgrounds */
-  --secondary-foreground: 150 40% 25%; /* Dark forest green for text */
+  /* Soft Warm Beige/Grey for secondary elements */
+  --secondary: 40 15% 94%;
+  --secondary-foreground: 220 20% 20%;
 
-  /* Muted: Warm Grey */
-  --muted: 30 10% 94%;
-  --muted-foreground: 220 10% 45%;
+  --muted: 220 10% 96%;
+  --muted-foreground: 220 10% 50%;
 
-  /* Accent: Muted Red/Terracotta (from Logo) */
-  --accent: 10 60% 94%;
-  --accent-foreground: 10 60% 40%;
+  /* Subtle Accent - Maybe a soft gold/sand for emphasis without shouting */
+  --accent: 35 40% 90%;
+  --accent-foreground: 220 20% 20%;
 
   --destructive: 0 84.2% 60.2%;
   --destructive-foreground: 0 0% 98%;
 
-  --border: 220 10% 90%;
-  --input: 220 10% 90%;
-  --ring: 345 40% 35%;
+  --border: 220 13% 91%;
+  --input: 220 13% 91%;
+  --ring: 215 60% 45%;
 
-  --radius: 1rem; /* Larger, more modern radius (Apple style) */
+  --radius: 0.5rem;
 }
 
 .dark {
   --background: 220 20% 10%;
-  --foreground: 30 10% 98%;
+  --foreground: 40 20% 99%;
   
   --card: 220 20% 12%;
-  --card-foreground: 30 10% 98%;
+  --card-foreground: 40 20% 99%;
   
   --popover: 220 20% 12%;
-  --popover-foreground: 30 10% 98%;
+  --popover-foreground: 40 20% 99%;
   
-  --primary: 345 40% 55%;
+  --primary: 215 60% 55%;
   --primary-foreground: 0 0% 100%;
   
-  --secondary: 150 20% 15%;
-  --secondary-foreground: 150 40% 80%;
+  --secondary: 220 20% 16%;
+  --secondary-foreground: 40 20% 99%;
   
   --muted: 220 20% 16%;
   --muted-foreground: 220 10% 70%;
   
-  --accent: 10 60% 20%;
-  --accent-foreground: 10 60% 90%;
+  --accent: 220 20% 16%;
+  --accent-foreground: 40 20% 99%;
   
   --destructive: 0 62.8% 30.6%;
   --destructive-foreground: 0 0% 98%;
   
   --border: 220 20% 16%;
   --input: 220 20% 16%;
-  --ring: 345 40% 55%;
+  --ring: 215 60% 55%;
 }
 
 @layer base {
@@ -128,18 +124,8 @@
   }
   body {
     @apply font-sans antialiased bg-background text-foreground;
-    font-feature-settings: "ss01", "ss03", "cv01", "cv11"; /* Inter advanced features */
   }
   h1, h2, h3, h4, h5, h6 {
-    @apply font-heading font-semibold tracking-tight text-balance;
-  }
-}
-
-@layer utilities {
-  .glass-panel {
-    @apply bg-white/70 backdrop-blur-xl border border-white/20 shadow-lg;
-  }
-  .text-balance {
-    text-wrap: balance;
+    @apply font-heading font-bold tracking-tight;
   }
 }
