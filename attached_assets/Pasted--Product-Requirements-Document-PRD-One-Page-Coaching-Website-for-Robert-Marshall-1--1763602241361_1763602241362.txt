@@ -1,0 +1,338 @@
+# Product Requirements Document (PRD)
+
+## One-Page Coaching Website for Robert Marshall
+
+---
+
+## 1. Product Overview
+
+The purpose of this project is to design and build a high-conversion, single-page website for **Robert Marshall**, a career and life coach. The site must clearly communicate Robert’s value, establish instant trust, and convert visitors into booked alignment calls. The design should feel clean, modern, human, and professional, reflecting Robert’s people-first coaching approach.
+
+---
+
+## 2. Goals & Objectives
+
+### Primary Goal
+
+Convert site visitors into scheduled **Free Alignment Calls**.
+
+### Secondary Goals
+
+* Communicate Robert’s credibility through his 30-year international career.
+* Clearly outline who he works with and what problems he solves.
+* Highlight Robert’s differentiators (people-first leadership, ADHD-informed coaching, deep listening, high-level corporate experience).
+* Remove friction from the scheduling process.
+* Deliver a concise, scannable site that builds immediate trust.
+
+---
+
+## 3. Target Users
+
+### Primary Segments
+
+1. **Mid-to-late career professionals** feeling stuck or stagnant.
+2. **High-functioning ADHD adults** or younger professionals who need foundational support.
+3. **People in career transition**, voluntary or involuntary.
+
+### User Needs
+
+* Clarity on whether this coach understands people like them.
+* Proof of credibility and lived experience.
+* A sense of safety, trust, and strong listening.
+* Low-friction path to booking a call.
+* Clear explanation of offerings without overwhelming detail.
+
+---
+
+## 4. Unique Value Proposition (UVP)
+
+Robert provides **people-first, deeply attentive coaching** informed by:
+
+* 30 years leading teams across the UK, Amsterdam, and the US.
+* VP-level leadership roles at Fox and The New York Times.
+* Experience managing PMO teams of 40–60 people.
+* Real lived experience navigating ADHD and designing systems that work.
+* A coaching approach rooted in deep listening and uncovering what clients aren’t saying.
+
+UVP Summary:
+**“High-level leadership experience meets human-centered coaching designed to get you unstuck.”**
+
+---
+
+## 5. Key Differentiators
+
+* Decades of experience leading large, complex teams.
+* Cross-continental leadership background.
+* Expertise in people development, difficult conversations, and career navigation.
+* ADHD-informed coaching methods developed from personal experience.
+* Trained through the Jay Shetty Certification School.
+* Proven success with three distinct client types.
+
+---
+
+## 6. Page Structure & Content Requirements
+
+The following hierarchy defines the required sections of the single-page website.
+
+### 6.1 Hero Section
+
+**Purpose:** Establish clarity, trust, and action.
+
+* Headline communicating who Robert helps and how.
+* Subheadline summarizing his background.
+* Prominent primary CTA: *Book Your Free Alignment Call*.
+* Secondary contact option (email link).
+* Photo of Robert (friendly, professional).
+
+### 6.2 Credibility Logo Strip
+
+**Purpose:** Instant validation.
+
+* Logos of AKQA, Razorfish, R/GA, Fox, and The New York Times.
+* Simple grayscale design.
+
+### 6.3 Who I Help
+
+**Purpose:** Help visitors self-identify.
+
+* Three short profiles: Stuck professionals, ADHD/early-career, and career transition clients.
+* One-line explanations for each.
+* Light CTA: *Not sure where you fit? Let’s talk.*
+
+### 6.4 What Makes My Approach Different
+
+**Purpose:** Clarify his coaching style and why it works.
+
+* People-first leadership.
+* VP-level corporate experience.
+* Deep listening and pattern recognition.
+* Goal clarity and structure.
+* ADHD-informed coaching.
+* Warm, honest tone.
+
+### 6.5 My Story
+
+**Purpose:** Human connection + origin story.
+
+* Short narrative of his 30-year career.
+* The moment he realized he was 80% people / 20% business.
+* Pivot to coaching at peak career.
+* ADHD diagnosis at 48 and how it shaped his approach.
+
+### 6.6 How Coaching Works (Process Overview)
+
+**Purpose:** Set expectations.
+
+* Step 1: Free Alignment Call (30–45 min).
+* Step 2: Define goals and foundations.
+* Step 3: Bi-weekly meetings for accountability and growth.
+* CTA repeated.
+
+### 6.7 Services & Pricing
+
+**Purpose:** Transparency.
+
+* Six-for-the-price-of-five package.
+* Individual sessions.
+* Minimal description to avoid cognitive overload.
+
+### 6.8 Testimonials (If Available)
+
+**Purpose:** Social proof.
+
+* 2–4 short quotes.
+* Attribution using initials or titles.
+
+### 6.9 Final CTA Strip
+
+**Purpose:** Reinforce conversion before exit.
+
+* Short closing message.
+* CTA button.
+* Secondary email option.
+
+### 6.10 Footer
+
+**Purpose:** Wrap-up essentials.
+
+* Name.
+* Certification.
+* Email / social link (LinkedIn only).
+
+---
+
+## 7. Functional Requirements
+
+### 7.1 CTAs
+
+* Primary CTA must appear at minimum 4 times.
+* All CTA buttons route to the same scheduling tool.
+
+### 7.2 Booking Flow
+
+* No forms or friction before scheduling.
+* Instant booking capability.
+
+### 7.3 Responsiveness
+
+* Mobile-first design.
+* All modules stack cleanly on small screens.
+
+### 7.4 Accessibility
+
+* High contrast ratio.
+* Clear typography.
+* Semantic HTML structure.
+* Buttons labeled for screen readers.
+
+---
+
+## 8. Visual & UX Requirements
+
+### Tone
+
+* Warm, confident, human.
+* Not overly corporate or overly inspirational.
+
+### Aesthetic
+
+* Clean, modern, minimal.
+* Ample whitespace.
+* A limited color palette.
+* Professional headshot.
+
+### Content Density
+
+* Light-to-medium.
+* Scannable sections.
+* Headings and short blocks—no long paragraphs.
+
+### Interaction Design
+
+* Smooth scroll.
+* Sticky or repeated CTA.
+* Subtle animation allowed but not necessary.
+
+---
+
+## 9. Constraints & Assumptions
+
+* Single-page site only.
+* Must be easy to maintain for a solo practitioner.
+* No blog or CMS required at launch.
+* Hosting and domain decisions TBD.
+
+---
+
+## 10. Acceptance Criteria
+
+* Page clearly communicates who Robert is and who he helps.
+* Users can book a call within 5 seconds of landing.
+* All CTAs lead to a working scheduling experience.
+* Visual design reflects Robert’s personality and background.
+* Page loads quickly and works on mobile and desktop.
+
+---
+
+## 11. Out-of-Scope
+
+* Multi-page site.
+* Email marketing automation.
+* Content creation beyond this page.
+* SEO strategy beyond fundamentals.
+
+---
+
+---
+
+## 12. Full Copy Draft (For Design & Build)
+
+### Hero Section Copy
+
+**Headline:** Coaching for Professionals Ready to Move Forward
+**Subheadline:** I'm Robert Marshall — a former VP who spent three decades helping teams grow, navigate change, and find clarity. Now I help individuals do the same.
+**CTA:** Book Your Free Alignment Call:** Book Your Free Alignment Call
+**Secondary:** Prefer email? Contact me at [email].
+
+### Credibility Strip Copy
+
+"Experience leading teams at:"
+
+* AKQA
+* Razorfish
+* R/GA
+* Fox
+* The New York Times
+
+### Who I Help Copy
+
+**Mid-to-Late Career Professionals**
+If you feel stuck, plateaued, or unsure how to reach the next level, we create a path forward.
+
+**High-Functioning ADHD Adults & Early-Career Professionals**
+For those navigating overwhelm, procrastination, or the basics no one teaches, we build systems that work for your brain.
+
+**Career Transitioners**
+Whether voluntary or involuntary, I help you regain momentum, structure your search, and stay grounded.
+
+**Not sure where you fit?** Let’s talk.
+
+### What Makes My Approach Different Copy
+
+* A people-first leadership style developed over 30 years across three countries.
+* VP-level experience managing teams of 40–60 at Fox and The New York Times.
+* Deep listening that picks up what you say, what you mean, and what you’ve stopped asking yourself.
+* Clear, actionable goal-setting so you always know your next step.
+* ADHD-informed coaching based on lived experience.
+* Warm, direct, judgment-free support.
+
+### My Story Copy
+
+I spent three decades building a career in project management and delivery leadership, working at top agencies and later becoming a VP at Fox and The New York Times. At the height of my career, I realized something important: the parts of my work that energized me most weren’t the business—they were the people. I’ve always been an 80% people, 20% business leader in roles that demanded the opposite.
+
+At the same time, I was diagnosed with ADHD at 48. It explained so much—and showed me that the systems I’d built to thrive could help others too.
+
+I transitioned into coaching at my peak, trained through the Jay Shetty Certification School, and now dedicate my work to helping people grow, get unstuck, and move toward what they truly want next.
+
+### How Coaching Works Copy
+
+**1. Alignment Call (Free, 30–45 minutes)**
+We explore your goals, your challenges, and whether we’re the right fit.
+
+**2. Set Clear, Doable Goals**
+Together we create a structured, measurable plan tailored to your needs.
+
+**3. Bi-Weekly Coaching for Momentum**
+Every two weeks, we track progress, uncover new insights, and adjust as needed.
+
+**CTA:** Book Your Free Alignment Call
+
+### Services & Pricing Copy
+
+**Six-Session Package (Pay for Five)**
+Ideal for job seekers or anyone navigating major change. Use within three months.
+
+**Individual Sessions**
+Flexible, ongoing support for clarity, leadership development, or personal growth.
+
+### Testimonials Copy (Placeholder — Replace When Available)
+
+“Robert asked the questions I hadn’t asked myself in years.” — Senior Manager
+
+“I left every session with clarity and an actionable next step.” — Product Lead
+
+“I landed a new role in eight weeks after struggling for over a year.” — Client in Transition
+
+### Final CTA Strip Copy
+
+Whether you’re stuck, overwhelmed, or simply ready for something new, the next step is a conversation.
+
+**CTA:** Book Your Free Alignment Call
+**Email:** [email]
+
+### Footer Copy
+
+Robert Marshall
+Certified Coach — Jay Shetty Certification School
+[email]
+LinkedIn
