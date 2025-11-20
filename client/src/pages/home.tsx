@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Check, ChevronDown, Menu, X } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   Accordion,
@@ -371,6 +371,22 @@ const Process = () => {
 
 // Services (Now zCal Embed)
 const Services = () => {
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://static.zcal.co/embed/v1/embed.js";
+    script.async = true;
+    document.body.appendChild(script);
+
+    return () => {
+      // Optional: Clean up the script if needed, but usually embed scripts 
+      // are global and checking existence before appending is safer, 
+      // but for this simple case, we just append.
+      if (document.body.contains(script)) {
+        document.body.removeChild(script);
+      }
+    };
+  }, []);
+
   return (
     <section id="services" className="py-20 md:py-28 bg-black text-white">
       <div className={CONTAINER_CLASS}>
@@ -381,12 +397,10 @@ const Services = () => {
           </p>
         </div>
 
-        <div className="w-full max-w-5xl mx-auto h-[700px] bg-white rounded-none border-2 border-white/20 overflow-hidden">
-          <iframe 
-            src="https://zcal.co/marshallcoach" 
-            className="w-full h-full border-0" 
-            title="Schedule with Robert Marshall"
-          ></iframe>
+        <div className="w-full max-w-5xl mx-auto bg-white rounded-none border-2 border-white/20 flex justify-center p-8 min-h-[600px]">
+           <div className="zcal-inline-widget w-full h-full">
+             <a href="https://zcal.co/i/724OIZf0" className="hidden">Discovery call - Schedule a meeting</a>
+           </div>
         </div>
       </div>
     </section>
