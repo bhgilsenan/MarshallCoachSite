@@ -99,9 +99,9 @@ const Navbar = () => {
 // Hero Section
 const Hero = () => {
   return (
-    <section className="relative pt-28 pb-16 md:pt-40 md:pb-32 overflow-hidden">
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+    <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
+      <div className="container mx-auto px-4 md:px-12 xl:px-[120px]">
+        <div className="grid md:grid-cols-2 gap-12 items-center py-12 md:py-0">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -134,18 +134,20 @@ const Hero = () => {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative"
+            className="relative flex justify-center"
           >
-            {/* Geometric shapes inspired by the logo colors */}
-            <div className="absolute top-10 right-10 w-full h-full border-4 border-primary -z-10"></div>
-            <div className="absolute -top-4 -left-4 w-32 h-32 bg-secondary -z-20"></div>
-            
-            <div className="relative z-10 border-4 border-black bg-white p-2">
-              <img 
-                src={robertPhoto} 
-                alt="Robert Marshall" 
-                className="w-full h-auto object-cover aspect-[4/5] md:aspect-square lg:aspect-[4/5] grayscale hover:grayscale-0 transition-all duration-700"
-              />
+            <div className="relative w-full max-w-[500px]">
+              {/* Geometric shapes inspired by the logo colors */}
+              <div className="absolute top-10 right-10 w-full h-full border-4 border-primary -z-10"></div>
+              <div className="absolute -top-4 -left-4 w-32 h-32 bg-secondary -z-20"></div>
+              
+              <div className="relative z-10 border-4 border-black bg-white p-2">
+                <img 
+                  src={robertPhoto} 
+                  alt="Robert Marshall" 
+                  className="w-full h-auto object-cover aspect-[4/5] md:aspect-square lg:aspect-[4/5] grayscale hover:grayscale-0 transition-all duration-700"
+                />
+              </div>
             </div>
           </motion.div>
         </div>
@@ -182,12 +184,12 @@ const WhoIHelp = () => {
       description: "If you feel stuck, plateaued, or unsure how to reach the next level, we create a path forward."
     },
     {
-      title: "High-Functioning ADHD Adults",
-      description: "For those navigating overwhelm, procrastination, or the basics no one teaches, we build systems that work for your brain."
-    },
-    {
       title: "Career Transitioners",
       description: "Whether voluntary or involuntary, I help you regain momentum, structure your search, and stay grounded."
+    },
+    {
+      title: "High-Functioning ADHD Adults",
+      description: "For those navigating overwhelm, procrastination, or the basics no one teaches, we build systems that work for your brain."
     }
   ];
 
@@ -363,50 +365,24 @@ const Process = () => {
   );
 };
 
-// Services
+// Services (Now zCal Embed)
 const Services = () => {
   return (
     <section id="services" className="py-20 md:py-32 bg-black text-white">
       <div className="container mx-auto px-4 md:px-6">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
-          <div>
-            <h2 className="text-4xl md:text-5xl font-bold mb-2 uppercase">Services & Pricing</h2>
-            <p className="text-white/60 text-lg font-medium uppercase tracking-widest">Transparent pricing. No hidden fees.</p>
-          </div>
-          <div className="hidden md:block h-px flex-1 bg-white/20 mx-12 mb-4"></div>
+        <div className="flex flex-col items-center mb-16 gap-6 text-center">
+          <h2 className="text-4xl md:text-5xl font-bold mb-2 uppercase">Schedule Your Time</h2>
+          <p className="text-white/60 text-lg font-medium uppercase tracking-widest max-w-2xl">
+            Ready to get started? Choose a time that works for you below.
+          </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-          <Card className="bg-white text-black rounded-none border-0 relative overflow-hidden group">
-            <div className="absolute top-0 right-0 bg-primary text-white text-xs font-bold px-3 py-1 uppercase tracking-widest">Best Value</div>
-            <CardContent className="p-10">
-              <div className="mb-8">
-                <h3 className="text-3xl font-bold font-heading mb-2 uppercase">Six-Session Package</h3>
-                <div className="w-12 h-1 bg-black mt-4 group-hover:w-24 transition-all duration-500"></div>
-              </div>
-              <p className="text-muted-foreground mb-10 text-lg leading-relaxed min-h-[5rem]">
-                Pay for five, get six. Ideal for job seekers or anyone navigating major change. Use within three months.
-              </p>
-              <Button className="w-full rounded-none font-bold uppercase tracking-widest border-2 border-black bg-transparent text-black hover:bg-black hover:text-white shadow-none" size="lg">
-                Get Started
-              </Button>
-            </CardContent>
-          </Card>
-
-          <Card className="bg-neutral-900 text-white rounded-none border-2 border-white/20 group">
-            <CardContent className="p-10">
-              <div className="mb-8">
-                <h3 className="text-3xl font-bold font-heading mb-2 uppercase">Individual Sessions</h3>
-                <div className="w-12 h-1 bg-white/30 mt-4 group-hover:w-24 transition-all duration-500"></div>
-              </div>
-              <p className="text-white/60 mb-10 text-lg leading-relaxed min-h-[5rem]">
-                Flexible, ongoing support for clarity, leadership development, or personal growth.
-              </p>
-              <Button variant="outline" className="w-full rounded-none font-bold uppercase tracking-widest border-2 border-white bg-transparent text-white hover:bg-white hover:text-black" size="lg">
-                Book a Session
-              </Button>
-            </CardContent>
-          </Card>
+        <div className="w-full max-w-5xl mx-auto h-[700px] bg-white rounded-none border-2 border-white/20 overflow-hidden">
+          <iframe 
+            src="https://zcal.co/marshallcoach" 
+            className="w-full h-full border-0" 
+            title="Schedule with Robert Marshall"
+          ></iframe>
         </div>
       </div>
     </section>
