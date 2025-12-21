@@ -1,8 +1,14 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Check, Menu, X } from "lucide-react";
+import { Check, ChevronDown, Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 // Assets
 import robertPhoto from "@assets/DSC03021_1763602437938.jpg";
@@ -26,25 +32,28 @@ const Navbar = () => {
     <nav className="fixed w-full bg-background/95 backdrop-blur-sm z-50 border-b border-border h-16">
       <div className={`${CONTAINER_CLASS} h-full`}>
         <div className="flex items-center justify-between h-full">
+          {/* Logo */}
           <a href="#" className="flex-shrink-0">
             <img src={logo} alt="Marshall Coach" className="h-8 w-auto object-contain" />
           </a>
 
-          <div className="hidden md:flex items-center gap-6">
+          {/* Desktop Nav */}
+          <div className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
-                className="text-xs font-medium uppercase tracking-wide text-foreground/70 hover:text-primary transition-colors"
+                className="text-xs font-medium uppercase tracking-widest text-foreground/70 hover:text-primary transition-colors"
               >
                 {link.name}
               </a>
             ))}
-            <Button variant="default" size="sm">
-              Book Call
+            <Button className="rounded-none font-bold uppercase tracking-widest text-xs h-10 px-6" size="default">
+              Book Alignment Call
             </Button>
           </div>
 
+          {/* Mobile Menu Button */}
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
@@ -57,6 +66,7 @@ const Navbar = () => {
         </div>
       </div>
 
+      {/* Mobile Nav */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -65,20 +75,22 @@ const Navbar = () => {
             exit={{ opacity: 0, height: 0 }}
             className="md:hidden bg-background border-b border-border"
           >
-            <div className="px-6 py-4 space-y-2">
+            <div className="px-6 pt-2 pb-6 space-y-2">
               {navLinks.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
                   onClick={() => setIsOpen(false)}
-                  className="block px-3 py-2 text-sm font-medium text-foreground hover:bg-muted rounded-md"
+                  className="block px-3 py-2 text-lg font-heading font-bold uppercase text-foreground hover:bg-secondary rounded-none"
                 >
                   {link.name}
                 </a>
               ))}
-              <Button className="w-full mt-4" size="md">
-                Book Alignment Call
-              </Button>
+              <div className="pt-4">
+                <Button className="w-full rounded-none font-bold uppercase" size="lg">
+                  Book Alignment Call
+                </Button>
+              </div>
             </div>
           </motion.div>
         )}
@@ -99,24 +111,24 @@ const Hero = () => {
             transition={{ duration: 0.6 }}
             className="flex flex-col justify-center"
           >
-            <div className="mb-4">
-              <span className="font-hand text-lg text-accent block">
-                Sincerity. Authenticity. Guidance.
-              </span>
+            <div className="mb-4 inline-block relative">
+               <span className="font-hand text-xl md:text-2xl text-accent rotate-[-4deg] block">
+                 Sincerity. Authenticity. Guidance.
+               </span>
             </div>
-            <h1 className="mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground leading-[0.95] mb-6 uppercase tracking-tighter">
               COACHING FOR <br/>
               PROFESSIONALS <br/>
               READY TO <span className="text-primary block">MOVE FORWARD.</span>
             </h1>
-            <p className="text-base text-muted-foreground mb-8 max-w-lg">
+            <p className="text-base md:text-lg text-muted-foreground mb-8 leading-relaxed max-w-lg font-medium">
               I'm Robert Marshall — a former VP who spent three decades helping teams grow, navigate change, and find clarity. Now I help individuals do the same.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg">
+              <Button size="lg" className="text-base px-8 py-6 rounded-none font-bold uppercase tracking-widest shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] transition-all border-2 border-black">
                 Book Alignment Call
               </Button>
-              <Button variant="secondary" size="lg">
+              <Button variant="outline" size="lg" className="text-base px-8 py-6 rounded-none border-2 border-black font-bold uppercase tracking-widest hover:bg-secondary transition-colors">
                 Contact via Email
               </Button>
             </div>
@@ -129,6 +141,7 @@ const Hero = () => {
             className="relative flex justify-center items-center h-full w-full"
           >
             <div className="relative w-full max-w-[400px] lg:max-w-[480px]">
+              {/* Geometric shapes inspired by the logo colors */}
               <div className="absolute top-6 right-6 w-full h-full border-4 border-primary -z-10"></div>
               <div className="absolute -top-4 -left-4 w-24 h-24 bg-secondary -z-20"></div>
               
@@ -152,12 +165,12 @@ const CredibilityStrip = () => {
   const companies = ["AKQA", "Razorfish", "R/GA", "Fox", "The New York Times"];
   
   return (
-    <section className="py-12 bg-black text-white border-y border-black">
+    <section className="py-10 bg-black text-white border-y border-black">
       <div className={CONTAINER_CLASS}>
-        <p className="text-center text-xs font-bold text-white/60 mb-6 uppercase tracking-wide">Experience leading teams at</p>
-        <div className="flex flex-wrap justify-center items-center gap-6 md:gap-12">
+        <p className="text-center text-xs font-bold text-white/60 mb-6 uppercase tracking-[0.2em]">Experience leading teams at</p>
+        <div className="flex flex-wrap justify-center items-center gap-x-8 gap-y-6 md:gap-x-12">
           {companies.map((company) => (
-            <span key={company} className="text-lg md:text-xl font-bold font-heading uppercase text-white/80 hover:text-primary transition-colors">
+            <span key={company} className="text-xl md:text-2xl font-bold font-heading uppercase tracking-tighter text-white/80 hover:text-primary transition-colors cursor-default">
               {company}
             </span>
           ))}
@@ -185,16 +198,16 @@ const WhoIHelp = () => {
   ];
 
   return (
-    <section className="py-20 md:py-20 bg-secondary/30">
+    <section className="py-20 md:py-28 bg-secondary/30">
       <div className={CONTAINER_CLASS}>
-        <div className="text-center max-w-3xl mx-auto mb-12">
-          <h2 className="mb-4">Who I Help</h2>
-          <p className="text-lg font-hand text-primary">
+        <div className="text-center max-w-3xl mx-auto mb-14">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 uppercase">Who I Help</h2>
+          <p className="text-lg font-hand text-primary rotate-[-1deg]">
             For people ready to do the work.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
           {profiles.map((profile, index) => (
             <motion.div
               key={index}
@@ -202,13 +215,13 @@ const WhoIHelp = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="bg-white p-6 border border-border rounded-lg hover:shadow-md transition-shadow"
+              className="bg-white p-6 lg:p-8 border-2 border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,0.1)] hover:shadow-[6px_6px_0px_0px_var(--color-primary)] transition-all"
             >
-              <div className="w-10 h-10 bg-primary text-white rounded-md flex items-center justify-center font-semibold mb-4">
+              <div className="w-10 h-10 lg:w-12 lg:h-12 bg-primary mb-5 flex items-center justify-center text-white font-bold text-lg lg:text-xl">
                 {index + 1}
               </div>
-              <h3 className="text-lg font-semibold mb-3">{profile.title}</h3>
-              <p className="text-sm text-muted-foreground">
+              <h3 className="text-xl lg:text-2xl font-bold mb-3 font-heading uppercase leading-none">{profile.title}</h3>
+              <p className="text-muted-foreground leading-relaxed font-medium text-sm lg:text-base">
                 {profile.description}
               </p>
             </motion.div>
@@ -216,9 +229,9 @@ const WhoIHelp = () => {
         </div>
 
         <div className="text-center mt-12">
-          <p className="text-base font-semibold mb-4">Not sure where you fit?</p>
-          <Button variant="link" className="text-primary">
-            Let's talk about your unique situation →
+          <p className="text-xl lg:text-2xl mb-4 font-heading font-bold uppercase">Not sure where you fit?</p>
+          <Button variant="link" className="text-primary text-lg lg:text-xl p-0 h-auto font-hand font-bold hover:no-underline rotate-[-2deg] hover:rotate-0 transition-transform">
+            Let's talk about your unique situation <span aria-hidden="true" className="ml-2">→</span>
           </Button>
         </div>
       </div>
@@ -238,35 +251,35 @@ const Approach = () => {
   ];
 
   return (
-    <section id="approach" className="py-20 md:py-20">
+    <section id="approach" className="py-20 md:py-28">
       <div className={CONTAINER_CLASS}>
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div>
-            <h2 className="mb-6">What Makes My Approach <span className="text-primary">Different</span></h2>
-            <p className="text-base font-medium text-foreground mb-8 border-l-4 border-primary pl-6">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 uppercase leading-none">What Makes My Approach <span className="text-primary">Different</span></h2>
+            <p className="text-lg lg:text-xl font-medium text-foreground mb-8 border-l-4 border-primary pl-6">
               High-level leadership experience meets human-centered coaching designed to get you unstuck.
             </p>
-            <div className="grid gap-4">
+            <div className="grid gap-3 lg:gap-4">
               {differentiators.map((item, index) => (
-                <div key={index} className="flex gap-3 items-start group">
-                  <div className="flex-shrink-0 w-6 h-6 border-2 border-black flex items-center justify-center mt-0.5 group-hover:bg-black group-hover:text-white transition-colors rounded-sm">
-                    <Check className="w-4 h-4" />
+                <div key={index} className="flex gap-4 items-center group">
+                  <div className="flex-shrink-0 w-6 h-6 lg:w-8 lg:h-8 border-2 border-black flex items-center justify-center text-black group-hover:bg-black group-hover:text-white transition-colors">
+                    <Check className="w-4 h-4 lg:w-5 lg:h-5" />
                   </div>
-                  <p className="text-sm font-medium text-foreground">{item}</p>
+                  <p className="text-base lg:text-lg font-bold uppercase tracking-wide text-foreground/80">{item}</p>
                 </div>
               ))}
             </div>
           </div>
           <div className="relative">
-            <div className="absolute inset-0 bg-black rounded-lg translate-x-2 translate-y-2"></div>
-            <div className="relative bg-white p-8 border-2 border-black rounded-lg h-full flex flex-col justify-center">
-              <h4 className="text-sm font-hand font-bold mb-4 text-accent">My Philosophy</h4>
-              <blockquote className="text-lg font-semibold mb-6">
+            <div className="absolute inset-0 bg-black transform translate-x-3 translate-y-3 lg:translate-x-4 lg:translate-y-4"></div>
+            <div className="relative bg-white p-8 lg:p-12 border-2 border-black h-full flex flex-col justify-center">
+              <h3 className="text-lg lg:text-xl font-hand font-bold mb-4 lg:mb-6 text-accent rotate-[-2deg] origin-left">My Philosophy</h3>
+              <blockquote className="text-2xl md:text-3xl lg:text-4xl font-heading font-bold uppercase leading-tight mb-6 lg:mb-8">
                 "I've always been an <span className="text-primary">80% people</span>, <span className="text-primary">20% business</span> leader in roles that demanded the opposite."
               </blockquote>
-              <div className="flex items-center gap-3">
-                <div className="h-0.5 w-8 bg-black"></div>
-                <span className="text-xs font-semibold uppercase tracking-wide">Robert Marshall</span>
+              <div className="flex items-center gap-4">
+                <div className="h-1 w-12 bg-black"></div>
+                <span className="text-sm font-bold uppercase tracking-widest">Robert Marshall</span>
               </div>
             </div>
           </div>
@@ -279,25 +292,25 @@ const Approach = () => {
 // Story
 const Story = () => {
   return (
-    <section id="story" className="py-20 md:py-20 bg-secondary text-secondary-foreground border-y border-black">
+    <section id="story" className="py-20 md:py-28 bg-secondary text-secondary-foreground border-y border-black">
       <div className={`${CONTAINER_CLASS} max-w-4xl`}>
         <div className="text-center mb-10">
-          <h2 className="mb-6">My Story</h2>
-          <div className="w-20 h-1 bg-primary mx-auto rounded-full"></div>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 uppercase">My Story</h2>
+          <div className="w-24 h-2 bg-primary mx-auto"></div>
         </div>
-        <div className="space-y-6 text-foreground/80">
-          <p className="text-base leading-relaxed">
+        <div className="prose prose-lg prose-neutral mx-auto text-foreground/80 font-medium">
+          <p className="mb-6 text-lg lg:text-xl leading-relaxed">
             I spent three decades building a career in project management and delivery leadership, working at top agencies and later becoming a VP at Fox and The New York Times. 
           </p>
-          <p className="text-base leading-relaxed">
-            At the height of my career, I realized something important: the parts of my work that energized me most weren't the business—they were the people. 
+          <p className="mb-6 text-lg lg:text-xl leading-relaxed">
+            At the height of my career, I realized something important: the parts of my work that energized me most weren’t the business—they were the people. 
           </p>
-          <div className="my-8 p-6 border-l-4 border-primary bg-white rounded-md">
-            <p className="text-base font-medium italic text-black m-0">
-              "At 48, I was diagnosed with ADHD. It explained so much—and showed me that the systems I'd built to thrive could help others too."
+          <div className="my-10 p-6 lg:p-8 border-l-8 border-primary bg-white">
+            <p className="text-xl lg:text-2xl font-bold italic text-black m-0">
+              "At 48, I was diagnosed with ADHD. It explained so much—and showed me that the systems I’d built to thrive could help others too."
             </p>
           </div>
-          <p className="text-base leading-relaxed">
+          <p className="text-lg lg:text-xl leading-relaxed">
             I transitioned into coaching at my peak, trained through the Jay Shetty Certification School, and now dedicate my work to helping people grow, get unstuck, and move toward what they truly want next.
           </p>
         </div>
@@ -309,21 +322,21 @@ const Story = () => {
 // How It Works
 const Process = () => {
   return (
-    <section className="py-20 md:py-20">
+    <section className="py-20 md:py-28">
       <div className={CONTAINER_CLASS}>
-        <div className="text-center mb-12">
-          <h2 className="mb-4">How Coaching Works</h2>
-          <p className="text-base font-hand text-muted-foreground">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 uppercase">How Coaching Works</h2>
+          <p className="text-lg lg:text-xl font-hand text-muted-foreground rotate-2">
             Simple. Structured. Effective.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-0 border border-border rounded-lg overflow-hidden">
+        <div className="grid md:grid-cols-3 gap-0 relative">
           {[
             {
               step: "1",
               title: "Alignment Call",
-              desc: "We explore your goals, your challenges, and whether we're the right fit. (Free)"
+              desc: "We explore your goals, your challenges, and whether we’re the right fit. (Free)"
             },
             {
               step: "2",
@@ -336,18 +349,18 @@ const Process = () => {
               desc: "Every two weeks, we track progress, uncover new insights, and adjust as needed."
             }
           ].map((item, index) => (
-            <div key={index} className={`relative p-6 ${index !== 2 ? 'border-r border-border md:border-b-0 border-b' : ''} hover:bg-muted/50 transition-colors`}>
-              <div className="text-4xl font-heading font-bold text-black/10 mb-2">
+            <div key={index} className={`relative p-6 lg:p-8 border-black ${index !== 2 ? 'md:border-r-2 border-b-2 md:border-b-0' : ''} hover:bg-secondary/20 transition-colors group`}>
+              <div className="text-5xl lg:text-6xl font-heading font-bold text-black/10 mb-4 group-hover:text-primary/20 transition-colors">
                 0{item.step}
               </div>
-              <h4 className="text-lg font-semibold mb-2">{item.title}</h4>
-              <p className="text-sm text-muted-foreground">{item.desc}</p>
+              <h3 className="text-xl lg:text-2xl font-bold mb-3 font-heading uppercase">{item.title}</h3>
+              <p className="text-base lg:text-lg text-muted-foreground leading-relaxed font-medium">{item.desc}</p>
             </div>
           ))}
         </div>
 
         <div className="text-center mt-12">
-          <Button size="lg">
+          <Button size="xl" className="text-base lg:text-lg px-10 py-6 rounded-none font-bold uppercase tracking-widest shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] transition-all border-2 border-black bg-primary text-white hover:bg-primary/90">
             Book Your Free Alignment Call
           </Button>
         </div>
@@ -356,7 +369,7 @@ const Process = () => {
   );
 };
 
-// Services (zCal Embed)
+// Services (Now zCal Embed)
 const Services = () => {
   useEffect(() => {
     const script = document.createElement("script");
@@ -365,6 +378,9 @@ const Services = () => {
     document.body.appendChild(script);
 
     return () => {
+      // Optional: Clean up the script if needed, but usually embed scripts 
+      // are global and checking existence before appending is safer, 
+      // but for this simple case, we just append.
       if (document.body.contains(script)) {
         document.body.removeChild(script);
       }
@@ -372,19 +388,19 @@ const Services = () => {
   }, []);
 
   return (
-    <section id="services" className="py-20 md:py-20 bg-black text-white">
+    <section id="services" className="py-20 md:py-28 bg-black text-white">
       <div className={CONTAINER_CLASS}>
         <div className="flex flex-col items-center mb-12 gap-4 text-center">
-          <h2 className="text-white">Schedule Your Time</h2>
-          <p className="text-sm text-white/60 font-medium uppercase tracking-wide max-w-2xl">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-2 uppercase">Schedule Your Time</h2>
+          <p className="text-white/60 text-base lg:text-lg font-medium uppercase tracking-widest max-w-2xl">
             Ready to get started? Choose a time that works for you below.
           </p>
         </div>
 
-        <div className="w-full max-w-5xl mx-auto bg-white rounded-lg flex justify-center p-8 min-h-[600px]">
-          <div className="zcal-inline-widget w-full">
-            <a href="https://zcal.co/i/724OIZf0" className="hidden">Discovery call - Schedule a meeting</a>
-          </div>
+        <div className="w-full max-w-5xl mx-auto bg-white rounded-none border-2 border-white/20 flex justify-center p-8 min-h-[600px]">
+           <div className="zcal-inline-widget w-full h-full">
+             <a href="https://zcal.co/i/724OIZf0" className="hidden">Discovery call - Schedule a meeting</a>
+           </div>
         </div>
       </div>
     </section>
@@ -395,7 +411,7 @@ const Services = () => {
 const Testimonials = () => {
   const testimonials = [
     {
-      quote: "Robert asked the questions I hadn't asked myself in years.",
+      quote: "Robert asked the questions I hadn’t asked myself in years.",
       author: "Senior Manager"
     },
     {
@@ -409,21 +425,19 @@ const Testimonials = () => {
   ];
 
   return (
-    <section id="testimonials" className="py-20 md:py-20">
+    <section id="testimonials" className="py-20 md:py-28">
       <div className={CONTAINER_CLASS}>
-        <h2 className="text-center mb-12">What Clients Say</h2>
-        <div className="grid md:grid-cols-3 gap-8">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-16 uppercase">What Clients Say</h2>
+        <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
           {testimonials.map((t, index) => (
-            <div key={index} className="relative pt-6">
-              <span className="absolute top-0 left-0 text-5xl text-primary/20 font-heading font-bold leading-none">
-                "
-              </span>
-              <p className="text-base font-semibold text-foreground leading-relaxed mb-4 relative z-10">
+            <div key={index} className="relative pt-8">
+              <span className="absolute top-0 left-0 text-7xl lg:text-8xl text-primary/20 font-heading font-bold leading-none -translate-y-4">“</span>
+              <p className="text-lg lg:text-2xl text-foreground font-bold font-heading leading-tight mb-6 relative z-10">
                 {t.quote}
               </p>
               <div className="flex items-center gap-3">
-                <div className="h-0.5 w-6 bg-primary rounded-full"></div>
-                <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wide">
+                 <div className="h-px w-8 bg-primary"></div>
+                 <p className="text-xs lg:text-sm font-bold text-muted-foreground uppercase tracking-widest">
                   {t.author}
                 </p>
               </div>
@@ -438,34 +452,36 @@ const Testimonials = () => {
 // Footer
 const Footer = () => {
   return (
-    <footer className="bg-secondary pt-16 pb-10 border-t border-border">
+    <footer className="bg-secondary pt-20 pb-10 border-t-2 border-black">
       <div className={CONTAINER_CLASS}>
-        <div className="flex flex-col md:flex-row justify-between items-start mb-12 gap-8">
-          <div className="text-left max-w-lg">
-            <h2 className="mb-4">Ready to move forward?</h2>
-            <p className="text-sm text-foreground/70">
-              Whether you're stuck, overwhelmed, or simply ready for something new, the next step is a conversation.
+        <div className="flex flex-col md:flex-row justify-between items-start mb-16">
+          <div className="text-left mb-10 md:mb-0 max-w-xl">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 uppercase leading-[0.9]">Ready to <br/>move forward?</h2>
+            <p className="text-foreground/70 text-lg lg:text-xl font-medium">
+              Whether you’re stuck, overwhelmed, or simply ready for something new, the next step is a conversation.
             </p>
           </div>
           <div className="flex flex-col gap-4 w-full md:w-auto">
-            <Button size="lg">
+            <Button size="xl" className="rounded-none bg-primary text-white hover:bg-primary/90 px-8 py-6 text-lg lg:text-xl font-bold uppercase tracking-widest border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
               Book Alignment Call
             </Button>
-            <a href="mailto:robert@marshallcoach.com" className="text-center text-foreground/60 hover:text-black font-semibold text-xs uppercase tracking-wide transition-colors">
+            <a href="mailto:robert@marshallcoach.com" className="text-center text-foreground/60 hover:text-black font-bold uppercase tracking-widest text-xs transition-colors mt-4">
               Or email me directly
             </a>
           </div>
         </div>
 
-        <div className="border-t border-border/20 pt-6 flex flex-col md:flex-row justify-between items-center gap-6">
-          <div className="flex items-center gap-4">
-            <img src={logo} alt="Marshall Coach" className="h-6 w-auto opacity-60" />
-            <div className="text-xs text-foreground/50">
+        <div className="border-t-2 border-black/10 pt-6 flex flex-col md:flex-row justify-between items-center gap-6">
+          <div className="flex items-center gap-6">
+            <img src={logo} alt="Marshall Coach" className="h-6 lg:h-8 w-auto opacity-80 mix-blend-multiply" />
+            <div className="text-xs font-bold uppercase tracking-widest text-foreground/50">
               <p>© {new Date().getFullYear()} Robert Marshall</p>
               <p>Certified Coach — Jay Shetty Certification School</p>
             </div>
           </div>
-          <a href="#" className="text-foreground/50 hover:text-foreground text-xs font-semibold uppercase tracking-wide transition-colors">LinkedIn</a>
+          <div className="flex gap-6">
+            <a href="#" className="text-foreground/50 hover:text-black font-bold uppercase tracking-widest text-xs transition-colors">LinkedIn</a>
+          </div>
         </div>
       </div>
     </footer>
