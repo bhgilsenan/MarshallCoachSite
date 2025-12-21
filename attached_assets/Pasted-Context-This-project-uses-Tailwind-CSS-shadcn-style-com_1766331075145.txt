@@ -1,0 +1,188 @@
+Context:
+This project uses Tailwind CSS, shadcn-style components, CSS variables, and a React-based structure.
+
+Goal:
+Apply a consistent, intentional design system across typography, buttons, spacing, forms, navigation, and elevation — optimized for both desktop and mobile — without changing the site’s content or layout structure.
+
+Instructions
+1. Typography
+
+Keep font families:
+
+Body: Jost
+
+Headings: Oswald
+
+Replace global heading styles so that each heading level has its own size.
+
+Apply this hierarchy:
+
+Desktop
+
+H1: text-5xl, leading-tight, font-bold, uppercase
+
+H2: text-4xl, leading-tight, font-semibold, uppercase
+
+H3: text-2xl, leading-snug, font-semibold
+
+H4: text-xl, leading-snug, font-medium
+
+Body: text-base, leading-relaxed
+
+Small text: text-sm
+
+Mobile
+
+H1 → text-4xl
+
+H2 → text-3xl
+
+H3 → unchanged
+
+Body remains text-base
+
+Limit uppercase + tracking-wide to H1 and H2 only.
+
+2. Buttons
+
+Standardize to three button sizes and explicitly set height.
+
+Add size variants:
+
+lg: h-11 px-5 text-sm font-semibold (44px)
+
+md: h-10 px-4 text-sm font-medium (40px)
+
+sm: h-8 px-2 text-sm font-medium (32px)
+
+Enforce usage:
+
+Primary CTA → size="lg"
+
+Secondary actions → size="md"
+
+Header/nav buttons → size="sm"
+
+Remove elevation/hover lift from:
+
+nav buttons
+
+secondary buttons
+
+Keep elevation only on primary CTAs.
+
+3. Border Radius
+
+Reduce overall roundness to better match the bold brand tone.
+
+Buttons → rounded-md
+
+Inputs → rounded-md
+
+Cards → rounded-lg
+
+Modals → rounded-xl
+
+Do not use rounded-xl on buttons.
+
+4. Spacing System
+
+Normalize spacing to an 8px grid.
+
+Section vertical padding:
+
+Desktop: py-20
+
+Mobile: py-12
+
+Card padding: p-6
+
+Stack spacing:
+
+Tight: gap-2
+
+Normal: gap-4
+
+Loose: gap-6
+
+Do not introduce arbitrary spacing values.
+
+5. Forms & Inputs
+
+Make inputs feel tighter but still mobile-friendly.
+
+Input height: h-11 (44px)
+
+Padding: px-3
+
+Font: text-sm
+
+Labels: text-sm font-medium
+
+Helper/error text: text-xs
+
+Focus state:
+
+ring-2
+
+Use existing --ring color token
+
+No glow or shadow effects
+
+6. Navigation
+
+Convert header navigation buttons to tertiary style only:
+
+Transparent background
+
+No elevation
+
+h-8 px-2 text-sm font-medium
+
+Hover state should change text color only
+
+Reserve filled buttons for primary CTAs inside page content
+
+7. Elevation & Motion
+
+Keep hover elevation only for:
+
+Primary CTAs
+
+Clickable cards
+
+Remove elevation from:
+
+Secondary buttons
+
+Nav buttons
+
+Inline actions
+
+8. Color Usage
+
+Use primary accent color only for:
+
+Primary CTA
+
+Focus ring
+
+Active navigation state
+
+Secondary actions should rely on:
+
+Borders
+
+Text color
+
+Muted hover backgrounds
+
+Constraints
+
+Do not change copy, layout structure, or routing
+
+Refactor styles and component variants only
+
+Preserve mobile usability and tap targets
+
+Keep changes consistent across all breakpoints
