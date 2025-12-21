@@ -1,0 +1,158 @@
+REPLIT PROMPT — FOUNDATIONAL ADJUSTMENTS ONLY (ACTIONABLE)
+
+IMPORTANT: FOLLOW THESE RULES EXACTLY
+
+This task is strictly limited to numeric and dimensional adjustments.
+
+DO NOT change:
+
+colors
+
+fonts or font families
+
+font weights, casing, or letter spacing
+
+border radii
+
+shadows, elevation, or motion
+
+hover, focus, or active styles
+
+component structure, variants, or class names
+
+overall visual styling or brand expression
+
+The UI must look identical in style after this task.
+
+If a change is not strictly numeric (size, spacing, height, padding), do not make it.
+
+ACTIONABLE PUNCH LIST (DO THESE EXACTLY)
+1. Typography — size hierarchy only
+
+Without altering any existing typography styling:
+
+Ensure H1 > H2 > H3 > body in font size
+
+Apply the following font sizes only:
+
+H1: 48px
+
+H2: 36px
+
+H3: 24px
+
+Body text: 16px
+
+Small/helper text: 14px
+
+Apply responsive scaling:
+
+On mobile:
+
+H1 → 36px
+
+H2 → 28px
+
+Do not change:
+
+weights
+
+uppercase usage
+
+tracking
+
+line-height unless text becomes unreadable
+
+2. Buttons — dimensions only
+
+Keep all button styling unchanged.
+
+Standardize button dimensions to:
+
+Primary buttons: height 44px, horizontal padding 20px
+
+Secondary buttons: height 40px, horizontal padding 16px
+
+Tertiary / nav buttons: height 32px, horizontal padding 8px
+
+Adjust font-size only if necessary to prevent text wrapping.
+
+Do not alter:
+
+colors
+
+border radius
+
+shadows
+
+hover or active behavior
+
+3. Spacing — vertical rhythm only
+
+Normalize vertical spacing without changing layout structure:
+
+Section vertical padding:
+
+Desktop: 80px
+
+Mobile: 48px
+
+Vertical spacing between stacked elements:
+
+Tight: 8px
+
+Normal: 16px
+
+Loose: 24px
+
+Do not:
+
+change horizontal spacing
+
+rewrap content
+
+modify grid or alignment
+
+4. Forms — size consistency only
+
+Keep all visual styling intact.
+
+Standardize:
+
+Input height: 44px
+
+Adjust label and helper text size only if inconsistent, using:
+
+Labels: 14–16px
+
+Helper/error text: 12–14px
+
+Do not change focus styles or borders.
+
+IMPLEMENTATION RULES
+
+Apply changes incrementally, starting with:
+
+Buttons
+
+Typography
+
+Spacing
+
+Forms
+
+Do not refactor, clean up, or rename code.
+
+Make the minimum number of changes required to satisfy each item.
+
+If uncertain, leave existing styling unchanged.
+
+SUCCESS CRITERIA
+
+Visual personality is unchanged
+
+Only sizes, spacing, and hierarchy consistency are improved
+
+No components look redesigned
+
+No new abstractions are introduced

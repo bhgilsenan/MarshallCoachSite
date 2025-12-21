@@ -43,12 +43,12 @@ const Navbar = () => {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-xs font-medium uppercase tracking-widest text-foreground/70 hover:text-primary transition-colors"
+                className="text-sm font-medium uppercase tracking-widest text-foreground/70 hover:text-primary transition-colors"
               >
                 {link.name}
               </a>
             ))}
-            <Button className="rounded-none font-bold uppercase tracking-widest text-xs h-10 px-6" size="default">
+            <Button className="rounded-none font-bold uppercase tracking-widest" size="sm">
               Book Alignment Call
             </Button>
           </div>
@@ -112,23 +112,23 @@ const Hero = () => {
             className="flex flex-col justify-center"
           >
             <div className="mb-4 inline-block relative">
-               <span className="font-hand text-xl md:text-2xl text-accent rotate-[-4deg] block">
+               <span className="font-hand text-sm md:text-base text-accent rotate-[-4deg] block">
                  Sincerity. Authenticity. Guidance.
                </span>
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground leading-[0.95] mb-6 uppercase tracking-tighter">
+            <h1 className="text-4xl md:text-5xl font-bold text-foreground leading-[0.95] mb-6 uppercase tracking-tighter">
               COACHING FOR <br/>
               PROFESSIONALS <br/>
               READY TO <span className="text-primary block">MOVE FORWARD.</span>
             </h1>
-            <p className="text-base md:text-lg text-muted-foreground mb-8 leading-relaxed max-w-lg font-medium">
+            <p className="text-base text-muted-foreground mb-8 leading-relaxed max-w-lg font-medium">
               I'm Robert Marshall — a former VP who spent three decades helping teams grow, navigate change, and find clarity. Now I help individuals do the same.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="text-base px-8 py-6 rounded-none font-bold uppercase tracking-widest shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] transition-all border-2 border-black">
+              <Button size="lg" className="rounded-none font-bold uppercase tracking-widest shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] transition-all border-2 border-black">
                 Book Alignment Call
               </Button>
-              <Button variant="outline" size="lg" className="text-base px-8 py-6 rounded-none border-2 border-black font-bold uppercase tracking-widest hover:bg-secondary transition-colors">
+              <Button variant="outline" size="lg" className="rounded-none border-2 border-black font-bold uppercase tracking-widest hover:bg-secondary transition-colors">
                 Contact via Email
               </Button>
             </div>
@@ -165,12 +165,12 @@ const CredibilityStrip = () => {
   const companies = ["AKQA", "Razorfish", "R/GA", "Fox", "The New York Times"];
   
   return (
-    <section className="py-10 bg-black text-white border-y border-black">
+    <section className="py-12 md:py-16 bg-black text-white border-y border-black">
       <div className={CONTAINER_CLASS}>
-        <p className="text-center text-xs font-bold text-white/60 mb-6 uppercase tracking-[0.2em]">Experience leading teams at</p>
+        <p className="text-center text-sm font-bold text-white/60 mb-6 uppercase tracking-[0.2em]">Experience leading teams at</p>
         <div className="flex flex-wrap justify-center items-center gap-x-8 gap-y-6 md:gap-x-12">
           {companies.map((company) => (
-            <span key={company} className="text-xl md:text-2xl font-bold font-heading uppercase tracking-tighter text-white/80 hover:text-primary transition-colors cursor-default">
+            <span key={company} className="text-lg md:text-xl font-bold font-heading uppercase tracking-tighter text-white/80 hover:text-primary transition-colors cursor-default">
               {company}
             </span>
           ))}
@@ -198,11 +198,11 @@ const WhoIHelp = () => {
   ];
 
   return (
-    <section className="py-20 md:py-28 bg-secondary/30">
+    <section className="py-12 md:py-20 bg-secondary/30">
       <div className={CONTAINER_CLASS}>
-        <div className="text-center max-w-3xl mx-auto mb-14">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 uppercase">Who I Help</h2>
-          <p className="text-lg font-hand text-primary rotate-[-1deg]">
+        <div className="text-center max-w-3xl mx-auto mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 uppercase">Who I Help</h2>
+          <p className="text-base font-hand text-primary rotate-[-1deg]">
             For people ready to do the work.
           </p>
         </div>
@@ -220,8 +220,8 @@ const WhoIHelp = () => {
               <div className="w-10 h-10 lg:w-12 lg:h-12 bg-primary mb-5 flex items-center justify-center text-white font-bold text-lg lg:text-xl">
                 {index + 1}
               </div>
-              <h3 className="text-xl lg:text-2xl font-bold mb-3 font-heading uppercase leading-none">{profile.title}</h3>
-              <p className="text-muted-foreground leading-relaxed font-medium text-sm lg:text-base">
+              <h3 className="text-lg font-bold mb-3 font-heading uppercase leading-none">{profile.title}</h3>
+              <p className="text-muted-foreground leading-relaxed font-medium text-sm">
                 {profile.description}
               </p>
             </motion.div>
@@ -229,8 +229,8 @@ const WhoIHelp = () => {
         </div>
 
         <div className="text-center mt-12">
-          <p className="text-xl lg:text-2xl mb-4 font-heading font-bold uppercase">Not sure where you fit?</p>
-          <Button variant="link" className="text-primary text-lg lg:text-xl p-0 h-auto font-hand font-bold hover:no-underline rotate-[-2deg] hover:rotate-0 transition-transform">
+          <p className="text-xl mb-4 font-heading font-bold uppercase">Not sure where you fit?</p>
+          <Button variant="link" className="text-primary text-base p-0 h-auto font-hand font-bold hover:no-underline rotate-[-2deg] hover:rotate-0 transition-transform">
             Let's talk about your unique situation <span aria-hidden="true" className="ml-2">→</span>
           </Button>
         </div>
@@ -251,21 +251,21 @@ const Approach = () => {
   ];
 
   return (
-    <section id="approach" className="py-20 md:py-28">
+    <section id="approach" className="py-12 md:py-20">
       <div className={CONTAINER_CLASS}>
         <div className="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
           <div>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 uppercase leading-none">What Makes My Approach <span className="text-primary">Different</span></h2>
-            <p className="text-lg lg:text-xl font-medium text-foreground mb-8 border-l-4 border-primary pl-6">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 uppercase leading-none">What Makes My Approach <span className="text-primary">Different</span></h2>
+            <p className="text-base font-medium text-foreground mb-8 border-l-4 border-primary pl-6">
               High-level leadership experience meets human-centered coaching designed to get you unstuck.
             </p>
             <div className="grid gap-3 lg:gap-4">
               {differentiators.map((item, index) => (
                 <div key={index} className="flex gap-4 items-center group">
-                  <div className="flex-shrink-0 w-6 h-6 lg:w-8 lg:h-8 border-2 border-black flex items-center justify-center text-black group-hover:bg-black group-hover:text-white transition-colors">
-                    <Check className="w-4 h-4 lg:w-5 lg:h-5" />
+                  <div className="flex-shrink-0 w-6 h-6 border-2 border-black flex items-center justify-center text-black group-hover:bg-black group-hover:text-white transition-colors">
+                    <Check className="w-4 h-4" />
                   </div>
-                  <p className="text-base lg:text-lg font-bold uppercase tracking-wide text-foreground/80">{item}</p>
+                  <p className="text-sm font-bold uppercase tracking-wide text-foreground/80">{item}</p>
                 </div>
               ))}
             </div>
@@ -273,8 +273,8 @@ const Approach = () => {
           <div className="relative">
             <div className="absolute inset-0 bg-black transform translate-x-3 translate-y-3 lg:translate-x-4 lg:translate-y-4"></div>
             <div className="relative bg-white p-8 lg:p-12 border-2 border-black h-full flex flex-col justify-center">
-              <h3 className="text-lg lg:text-xl font-hand font-bold mb-4 lg:mb-6 text-accent rotate-[-2deg] origin-left">My Philosophy</h3>
-              <blockquote className="text-2xl md:text-3xl lg:text-4xl font-heading font-bold uppercase leading-tight mb-6 lg:mb-8">
+              <h3 className="text-base font-hand font-bold mb-4 lg:mb-6 text-accent rotate-[-2deg] origin-left">My Philosophy</h3>
+              <blockquote className="text-2xl md:text-3xl font-heading font-bold uppercase leading-tight mb-6 lg:mb-8">
                 "I've always been an <span className="text-primary">80% people</span>, <span className="text-primary">20% business</span> leader in roles that demanded the opposite."
               </blockquote>
               <div className="flex items-center gap-4">
@@ -292,10 +292,10 @@ const Approach = () => {
 // Story
 const Story = () => {
   return (
-    <section id="story" className="py-20 md:py-28 bg-secondary text-secondary-foreground border-y border-black">
+    <section id="story" className="py-12 md:py-20 bg-secondary text-secondary-foreground border-y border-black">
       <div className={`${CONTAINER_CLASS} max-w-4xl`}>
         <div className="text-center mb-10">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 uppercase">My Story</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 uppercase">My Story</h2>
           <div className="w-24 h-2 bg-primary mx-auto"></div>
         </div>
         <div className="prose prose-lg prose-neutral mx-auto text-foreground/80 font-medium">
