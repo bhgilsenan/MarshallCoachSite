@@ -124,10 +124,28 @@
   * {
     @apply border-border;
   }
+  html {
+    scroll-behavior: smooth;
+  }
   body {
     @apply font-sans antialiased bg-background text-foreground;
   }
   h1, h2, h3, h4, h5, h6 {
     @apply font-heading font-bold uppercase tracking-wide;
+  }
+}
+
+@layer components {
+  #story {
+    @apply scroll-mt-20;
+  }
+  #approach {
+    @apply scroll-mt-20;
+  }
+  #services {
+    @apply scroll-mt-20;
+  }
+  #testimonials {
+    @apply scroll-mt-20;
   }
 }

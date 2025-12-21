@@ -48,8 +48,8 @@ const Navbar = () => {
                 {link.name}
               </a>
             ))}
-            <Button className="rounded-none font-bold uppercase tracking-widest" size="sm">
-              Book Alignment Call
+            <Button className="rounded-none font-bold" size="sm">
+              Book a call
             </Button>
           </div>
 
@@ -87,8 +87,8 @@ const Navbar = () => {
                 </a>
               ))}
               <div className="pt-4">
-                <Button className="w-full rounded-none font-bold uppercase" size="lg">
-                  Book Alignment Call
+                <Button className="w-full rounded-none font-bold" size="lg">
+                  Book a call
                 </Button>
               </div>
             </div>
@@ -104,7 +104,7 @@ const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center pt-16 overflow-hidden">
       <div className={`${CONTAINER_CLASS} py-8 md:py-0`}>
-        <div className="grid md:grid-cols-2 gap-8 lg:gap-16 items-center h-full">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-16 items-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -125,11 +125,11 @@ const Hero = () => {
               I'm Robert Marshall — a former VP who spent three decades helping teams grow, navigate change, and find clarity. Now I help individuals do the same.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="rounded-none font-bold uppercase tracking-widest shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] transition-all border-2 border-black">
-                Book Alignment Call
+              <Button size="lg" className="rounded-none font-bold shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] transition-all border-2 border-black">
+                Book a call
               </Button>
-              <Button variant="outline" size="lg" className="rounded-none border-2 border-black font-bold uppercase tracking-widest hover:bg-secondary transition-colors">
-                Contact via Email
+              <Button variant="outline" size="lg" className="rounded-none border-2 border-black font-bold hover:bg-secondary transition-colors">
+                Email me
               </Button>
             </div>
           </motion.div>
@@ -293,7 +293,8 @@ const Approach = () => {
 const Story = () => {
   return (
     <section id="story" className="py-12 md:py-20 bg-secondary text-secondary-foreground border-y border-black">
-      <div className={`${CONTAINER_CLASS} max-w-4xl`}>
+      <div className={`${CONTAINER_CLASS}`}>
+        <div className="max-w-2xl mx-auto">
         <div className="text-center mb-10">
           <h2 className="text-3xl md:text-4xl font-bold mb-6 uppercase">My Story</h2>
           <div className="w-24 h-2 bg-primary mx-auto"></div>
@@ -313,6 +314,7 @@ const Story = () => {
           <p className="text-lg lg:text-xl leading-relaxed">
             I transitioned into coaching at my peak, trained through the Jay Shetty Certification School, and now dedicate my work to helping people grow, get unstuck, and move toward what they truly want next.
           </p>
+        </div>
         </div>
       </div>
     </section>
@@ -388,19 +390,20 @@ const Services = () => {
   }, []);
 
   return (
-    <section id="services" className="py-20 md:py-28 bg-black text-white">
+    <section id="services" className="py-12 md:py-20 bg-black text-white">
       <div className={CONTAINER_CLASS}>
-        <div className="flex flex-col items-center mb-12 gap-4 text-center">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-2 uppercase">Schedule Your Time</h2>
-          <p className="text-white/60 text-base lg:text-lg font-medium uppercase tracking-widest max-w-2xl">
-            Ready to get started? Choose a time that works for you below.
-          </p>
-        </div>
-
-        <div className="w-full max-w-5xl mx-auto bg-white rounded-none border-2 border-white/20 flex justify-center p-8 min-h-[600px]">
-           <div className="zcal-inline-widget w-full h-full">
-             <a href="https://zcal.co/i/724OIZf0" className="hidden">Discovery call - Schedule a meeting</a>
-           </div>
+        <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-start">
+          <div>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 uppercase">Pick a time</h2>
+            <p className="text-white/60 text-base font-medium mb-6">
+              Ready to get started? Choose a time that works for you.
+            </p>
+          </div>
+          <div className="w-full bg-white rounded-none border-2 border-white/20 flex justify-center p-6 md:p-8 min-h-[500px] md:min-h-[600px]">
+             <div className="zcal-inline-widget w-full h-full">
+               <a href="https://zcal.co/i/724OIZf0" className="hidden">Discovery call - Schedule a meeting</a>
+             </div>
+          </div>
         </div>
       </div>
     </section>

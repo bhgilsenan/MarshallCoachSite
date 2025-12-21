@@ -1,0 +1,248 @@
+Implement the UX copy, calendar, responsiveness, link, and testimonial updates below.
+
+CRITICAL CONSTRAINTS (DO NOT VIOLATE)
+
+DO NOT change visual styling or brand expression:
+
+No changes to fonts, colors, shadows, borders, gradients, imagery, or component “look”
+
+Only change:
+
+UX copy
+
+Layout behavior (calendar + responsiveness)
+
+Scrolling behavior
+
+Link destinations / behavior
+
+Do not introduce new design patterns or restyle components
+
+Do not paraphrase or “improve” provided copy
+
+1) Smooth scrolling for in-page anchor navigation
+
+(unchanged — implement exactly as before)
+
+Enable smooth scrolling for all same-page anchor navigation
+
+Use CSS where possible:
+html { scroll-behavior: smooth; }
+
+Add scroll offset so section headings are not hidden behind the fixed header:
+
+Apply appropriate scroll-margin-top to anchored sections
+
+If any JS handles anchors manually, update it to use animated scrolling
+
+Acceptance criteria
+
+Anchor clicks scroll smoothly
+
+No section headers are hidden under the nav
+
+2) Narrow “About / My Story” reading width on desktop
+
+(unchanged — implement exactly as before)
+
+Constrain the text column to ~720px max width
+
+Center it
+
+Desktop only; mobile remains fluid
+
+Do not alter typography or background styling
+
+3) Calendar embed: horizontal layout on desktop, stacked on mobile
+
+(unchanged — implement exactly as before)
+
+Desktop: two-column layout
+
+Left: copy / context
+
+Right: calendar embed
+
+Mobile/tablet: stacked
+
+Calendar container:
+
+width: 100%
+
+sufficient min-height to avoid clipping
+
+Do not change the calendar service or embed logic
+
+4) Fix responsive overlap bugs (hero + global safety pass)
+
+(unchanged — implement exactly as before)
+
+Fix hero portrait overlapping the “Contact” button at certain widths
+
+Prefer layout fixes (grid/flex/breakpoints) over visual tweaks
+
+Ensure no overlaps at:
+
+320, 375, 414, 768, 1024, 1280, 1440px
+
+5) Button and link labels: sentence case
+
+(unchanged — implement exactly as before)
+
+Buttons and links → sentence case
+
+Eyebrow text and headers may remain ALL CAPS
+
+Remove uppercase styling only from buttons/links
+
+Do not alter typography styles otherwise
+
+6) UX microcopy updates (controls + UI labels only)
+
+(unchanged — implement exactly as before)
+
+Replace overuse of “Book alignment call”
+
+Use a single primary CTA consistently:
+
+“Book a call”
+
+Reduce jargon and long button labels
+
+Keep copy short, human, and action-oriented
+
+Do not rewrite long-form storytelling content
+
+7) LinkedIn links — normalize destination and behavior (NEW)
+Goal
+
+Ensure all LinkedIn links point to the same profile and open in a new tab.
+
+Implementation requirements
+
+Find every LinkedIn link across the site, including but not limited to:
+
+Header / footer icons
+
+Social links
+
+Inline text links
+
+Testimonial cards (if present)
+
+Update all LinkedIn URLs to exactly:
+
+https://www.linkedin.com/in/robertnmarshall/
+
+
+Ensure every LinkedIn link:
+
+Opens in a new tab (target="_blank")
+
+Uses rel="noopener noreferrer"
+
+Acceptance criteria
+
+No LinkedIn link points anywhere else
+
+All LinkedIn links open in a new browser tab
+
+No visual changes to icons or link styling
+
+8) Replace placeholder testimonials with provided quotes (NEW)
+Goal
+
+Replace all placeholder / dummy testimonial content with the exact quotes and attributions provided below.
+
+IMPORTANT RULES
+
+Use the text verbatim
+
+Do not paraphrase
+
+Do not change punctuation, capitalization, or wording
+
+Do not invent additional testimonials
+
+TESTIMONIAL 1
+
+Quote
+
+“In a time when I felt stuck and uninspired, Robert helped me take control of my life.
+Working with Robert was one of the best investments I made for myself.”
+
+Attribution
+
+Name: Sofia M.
+
+Title line: Amazing Human Being
+
+TESTIMONIAL 2
+
+Quote
+
+“Real progress comes from practical advice, genuine care, and a balance of guidance and autonomy.”
+
+Attribution
+
+Name: P. Yu
+
+Title line: Systems Architect
+
+TESTIMONIAL 3
+
+Quote
+
+“Our dynamic conversations consistently pushed me forward with unexpected, valuable insights.”
+
+Attribution
+
+Name: Brendan G.
+
+Title line: Design Lead
+
+Implementation notes
+
+Map these testimonials to the existing testimonial UI components
+
+Maintain current layout, styling, and order unless otherwise required by the component logic
+
+If there are more testimonial slots than quotes:
+
+Use only these three
+
+Do not duplicate or fabricate additional entries
+
+Acceptance criteria
+
+All placeholder testimonial text is fully replaced
+
+Quotes and names match exactly
+
+No visual styling changes
+
+FINAL QA CHECKLIST (REQUIRED)
+
+Test and confirm:
+
+Smooth scrolling works for all in-page anchors
+
+About/My Story text is readable on wide screens
+
+Calendar is horizontal on desktop, stacked on mobile
+
+No overlaps at any common viewport width
+
+Buttons and links are sentence case
+
+All LinkedIn links go to the correct profile and open in a new tab
+
+Testimonials exactly match the provided quotes and attributions
+
+Output requirement
+
+After implementation:
+
+List the files changed
+
+Briefly describe what was changed in each file
